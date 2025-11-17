@@ -1,7 +1,7 @@
 # Shadowspire
 *Top-down survival roguelite*
 
-###Features:
+### Features:
 - Two Characters
   - [ ] Melee
   - [ ] Ranged
