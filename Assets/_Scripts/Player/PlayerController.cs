@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerController  : MonoBehaviour
 {
     public CharacterController Controller;
     public float Speed;
