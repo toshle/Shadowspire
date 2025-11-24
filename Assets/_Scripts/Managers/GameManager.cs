@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -62,30 +62,21 @@ public class GameManager : MonoBehaviour
         {
             case GameState.MainMenu:
                 UnloadLevel();
-                /*if (BoardInstance != null)
-                {
-                    UnloadLevel();
-                }
-                SoundManager.Instance.PlayMenuMusic();*/
                 Instantiate(_mainMenuPrefab, _canvasesContainer.transform);
                 break;
             case GameState.HubLevel:
                 UnloadLevel();
+                // Показваме Loading екран
                 await LoadLevel("Hub");
+                // Скриваме Loading екран
                 break;
             case GameState.ArenaLevel:
                 UnloadLevel();
                 await LoadLevel("Arena");
                 break;
             case GameState.Win:
-                /*UnloadLevel();
-                var win = Instantiate(_endGamePrefab, _canvasesContainer.transform);
-                win.Init(Faction.Human);*/
                 break;
             case GameState.Lose:
-                /*UnloadLevel();
-                var lose = Instantiate(_endGamePrefab, _canvasesContainer.transform);
-                lose.Init(Faction.AI);*/
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -98,14 +89,10 @@ public class GameManager : MonoBehaviour
         {
             if (_isPaused)
             {
-               /* BoardInstance.gameObject.SetActive(true);
-                _hudInstance.gameObject.SetActive(true);*/
                 _isPaused = false;
             }
             else
             {
-                /*BoardInstance.gameObject.SetActive(false);
-                _hudInstance.gameObject.SetActive(false);*/
                 Instantiate(_pauseMenuPrefab, _canvasesContainer.transform);
                 _isPaused = true;
             }
