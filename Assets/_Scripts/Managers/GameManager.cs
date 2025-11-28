@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MainMenu _mainMenuPrefab;
     [SerializeField] private PauseMenu _pauseMenuPrefab;
     [SerializeField] private CameraFollow _camera;
+    [SerializeField] private Camera _menuCamera;
 
     private string _currentLevel;
 
@@ -62,10 +63,12 @@ public class GameManager : MonoBehaviour
         {
             case GameState.MainMenu:
                 UnloadLevel();
+                _menuCamera.gameObject.SetActive(true);
                 Instantiate(_mainMenuPrefab, _canvasesContainer.transform);
                 break;
             case GameState.HubLevel:
                 UnloadLevel();
+                _menuCamera.gameObject.SetActive(false);
                 // Показваме Loading екран
                 await LoadLevel("Hub");
                 // Скриваме Loading екран
