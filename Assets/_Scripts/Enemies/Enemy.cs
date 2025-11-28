@@ -23,11 +23,9 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown = 1f;
     public float damageDelay = 0.2f;
 
-    [Header("Health")]
-    public int maxHealth = 100;
+    
 
     // --- INTERNALS ---
-    private int currentHealth;
     private float lastAttackTime;
     private NavMeshAgent agent;
     private int patrolIndex;
@@ -40,7 +38,6 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
 
@@ -194,41 +191,10 @@ public class EnemyAI : MonoBehaviour
     // -------------------------
     // HEALTH
     // -------------------------
-    public void TakeDamage(int amt)
-    {
-        currentHealth -= amt;
-        if (currentHealth <= 0) Die();
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
+    
 }
 
 
 //--------------------------------------------------------------
 // SIMPLE Player/Enemy HEALTH CLASS (embedded)
 //--------------------------------------------------------------
-public class Health : MonoBehaviour
-{
-    public int maxHealth = 100;
-    public int currentHealth;
-
-    private void Awake()
-    {
-        currentHealth = maxHealth;
-    }
-
-    public void TakeDamage(int amt)
-    {
-        currentHealth -= amt;
-        if (currentHealth <= 0)
-            Die();
-    }
-
-    private void Die()
-    {
-        Destroy(gameObject);
-    }
-}

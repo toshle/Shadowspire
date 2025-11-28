@@ -127,9 +127,10 @@ GameObject:
   - component: {fileID: 2250074459884782012}
   - component: {fileID: 6739758384655248803}
   - component: {fileID: 7137786083921884203}
+  - component: {fileID: -2231279327880164074}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,11 +247,10 @@ MonoBehaviour:
   patrolWaitTime: 1
   sightRange: 500
   viewAngle: 360
-  attackRange: 0
+  attackRange: 2
   damage: 10
   attackCooldown: 1
   damageDelay: 0.2
-  maxHealth: 100
 --- !u!195 &7137786083921884203
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -273,3 +273,17 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-2231279327880164074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8519152323828365294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66cdb1f58c489c84aba480d8dc282755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  currentHealth: 0
