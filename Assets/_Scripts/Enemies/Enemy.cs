@@ -23,7 +23,8 @@ public class EnemyAI : MonoBehaviour
     public float attackCooldown = 1f;
     public float damageDelay = 0.2f;
 
-    
+    public int exp = 20;
+
 
     // --- INTERNALS ---
     private float lastAttackTime;
