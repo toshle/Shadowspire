@@ -5,6 +5,9 @@ public class Health : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    [SerializeField] HealthBar _healthBar;
+    [SerializeField] HUD _hud;
+
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -13,6 +16,13 @@ public class Health : MonoBehaviour
     public void TakeDamage(int amt)
     {
         currentHealth -= amt;
+        if(_healthBar != null)
+        {
+            _healthBar.SetHealth(currentHealth, maxHealth);
+        } else if(_hud != null)
+        {
+            _hud.SetHealth(currentHealth, maxHealth);
+        }
         if (currentHealth <= 0)
             Die();
     }

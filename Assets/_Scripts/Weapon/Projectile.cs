@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
     public SphereCollider sphereCollider;
     public Rigidbody rb;
     public int damege = 30;
+    [SerializeField] private int _passThrough = 0;
+    private int _targetsHit = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,15 +21,27 @@ public class Projectile : MonoBehaviour
         rb.linearVelocity = transform.forward * Speed * Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    // ??????????? ???? ???????? ? ????
+    // ??????? Health ?????????? 
+    // ?????? ??????
+    private void OnTriggerEnter(Collider collision)
     {
-        Destroy(gameObject);
-        if (collision.collider.CompareTag("Enemy"))
+        Debug.Log("Hit " + collision.gameObject.name);
+        if (collision.CompareTag("Enemy"))
         {
-            Health p = collision.collider.GetComponent<Health>();
+            _targetsHit++;
+            Health p = collision.GetComponent<Health>();
+            Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
             if (p != null) p.TakeDamage(damege);
+            if (_targetsHit > _passThrough)
+            {
+                Destroy(gameObject);
+            }
+        } else
+        {
+            Destroy(gameObject);
         }
-        
     }
    
 }
