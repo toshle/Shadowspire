@@ -231,7 +231,11 @@ GameObject:
   - component: {fileID: 6929699115768985746}
   - component: {fileID: 4243143898884779508}
   - component: {fileID: 6972941370514595800}
+<<<<<<< HEAD
   - component: {fileID: -5987846834833979954}
+=======
+  - component: {fileID: 1089015747315208969}
+>>>>>>> 8d1e1fc (Connect level system to UI)
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -461,7 +465,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
   currentHealth: 0
+<<<<<<< HEAD
 --- !u!114 &-5987846834833979954
+=======
+  _healthBar: {fileID: 0}
+  _hud: {fileID: 5804444925319180324}
+--- !u!114 &1089015747315208969
+>>>>>>> 8d1e1fc (Connect level system to UI)
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,6 +485,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level
   CurrentExp: 0
   CurrentLevel: 1
+<<<<<<< HEAD
+=======
+  _hud: {fileID: 5804444925319180324}
+>>>>>>> 8d1e1fc (Connect level system to UI)
 --- !u!1 &8783693808716426496
 GameObject:
   m_ObjectHideFlags: 0
