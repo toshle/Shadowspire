@@ -721,7 +721,7 @@ GameObject:
   - component: {fileID: 688409567}
   m_Layer: 0
   m_Name: EnemySpawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -757,6 +757,7 @@ MonoBehaviour:
   Level: {fileID: 1861486560}
   MaxAlive: 50
   SpawnInterval: 0.5
+  _currentlyAlive: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,6 +1170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5856298565174965593, guid: a2af08643993a1d43acb41fb36d825e5, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354711550896669863, guid: a2af08643993a1d43acb41fb36d825e5, type: 3}
+      propertyPath: AttackSpeed
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

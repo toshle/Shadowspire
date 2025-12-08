@@ -32,9 +32,12 @@ public class Health : MonoBehaviour
         if (CompareTag("Enemy"))
         {
             GameObject p = GameObject.FindGameObjectWithTag("Player");
+            GameObject s = GameObject.FindGameObjectWithTag("Spawner");
             var level = p.GetComponent<Level>();
             var enemy = GetComponent<EnemyAI>();
             level.GiveExp(enemy.exp);
+            var spawner = s.GetComponent<Spawner>();
+            spawner.KilledEnemy();
         }
         Destroy(gameObject);
     }

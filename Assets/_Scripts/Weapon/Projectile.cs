@@ -28,6 +28,10 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Debug.Log("Hit " + collision.gameObject.name);
+        if (collision.CompareTag("Player") || collision.CompareTag("Projectile"))
+        {
+            return;
+        }
         if (collision.CompareTag("Enemy"))
         {
             _targetsHit++;

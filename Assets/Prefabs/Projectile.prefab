@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3790539609450564087}
   m_Layer: 0
   m_Name: Projectile
-  m_TagString: Untagged
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
   Speed: 3000
   sphereCollider: {fileID: 8670233046552604270}
   rb: {fileID: 3790539609450564087}
-  damege: 30
+  damege: 50
   _passThrough: 1
 --- !u!54 &3790539609450564087
 Rigidbody:

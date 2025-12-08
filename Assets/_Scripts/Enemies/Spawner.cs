@@ -10,6 +10,7 @@ public class Spawner : MonoBehaviour
     // Max alive = 200
     // Spawn interval = 0.5f;
 
+    [SerializeField]
     private int _currentlyAlive = 0;
     private float _lastAttackTime;
 
@@ -39,5 +40,10 @@ public class Spawner : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void KilledEnemy()
+    {
+        _currentlyAlive--;
     }
 }
