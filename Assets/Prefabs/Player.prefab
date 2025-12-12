@@ -195,6 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   BulletPrefab: {fileID: 3820255246504839316, guid: 733074aa1bd619744b1b1f8b43e59565, type: 3}
   BulletPoint: {fileID: 2345684019084494634}
+  _playerStats: {fileID: 3263862266289345985}
   AttackSpeed: 1
 --- !u!1 &5856298565174965593
 GameObject:
@@ -211,6 +212,7 @@ GameObject:
   - component: {fileID: 4243143898884779508}
   - component: {fileID: 6972941370514595800}
   - component: {fileID: 1089015747315208969}
+  - component: {fileID: 3263862266289345985}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -249,6 +251,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   Controller: {fileID: 4243143898884779508}
   Speed: 8
+  _playerStats: {fileID: 3263862266289345985}
 --- !u!114 &7702419862047436128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,7 +460,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Level
   CurrentExp: 0
   CurrentLevel: 1
+  _playerStats: {fileID: 3263862266289345985}
+  _playerHealth: {fileID: 6972941370514595800}
   _hud: {fileID: 5804444925319180324}
+--- !u!114 &3263862266289345985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856298565174965593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cc585e8140ee048929b1d85dac4fe0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Stats
+  MovementSpeed: 0
+  Armor: 0
+  BonusDamage: 0
+  AttackSpread: 0
+  AttackRange: 0
+  AttackPassThrough: 0
+  AttackSpeed: 0
+  LifeSteal: 0
+  HealthRegeneration: 0
+  HealOnLevelUp: 0
+  ExplodingProjectiles: 0
 --- !u!1 &8783693808716426496
 GameObject:
   m_ObjectHideFlags: 0

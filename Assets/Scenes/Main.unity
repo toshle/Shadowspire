@@ -167,6 +167,7 @@ MonoBehaviour:
   _loadingPrefab: {fileID: 0}
   _mainMenuPrefab: {fileID: 4681098638717965871, guid: fc3d353564153d24e9fa94c026528be0, type: 3}
   _pauseMenuPrefab: {fileID: 8378310144445235953, guid: 7f9f8648d85404e42a98872d3b2cbf19, type: 3}
+  _upgradeMenuPrefab: {fileID: 3810553088970990073, guid: 5e0741cf4e9f384449757c0dfc6b8723, type: 3}
   _camera: {fileID: 6396665398211493344, guid: fac88512f9a7d2f49a58c7865cc67a29, type: 3}
   _menuCamera: {fileID: 1023128186}
 --- !u!1 &353550999

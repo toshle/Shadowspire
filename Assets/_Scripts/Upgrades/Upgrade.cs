@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Stats : MonoBehaviour
+[CreateAssetMenu(fileName = "Upgrade", menuName = "Scriptable Objects/Upgrade")]
+public class Upgrade : ScriptableObject
 {
     public float MovementSpeed = 0f;
     public float Armor = 0f;
@@ -14,16 +15,5 @@ public class Stats : MonoBehaviour
     public bool HealOnLevelUp = false;
     public bool ExplodingProjectiles = false;
 
-
-    // movement speed, attack speed, attack pass through, health, armor, damage bonus, attack spread, attack range
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string UpgradeText = string.Empty;
 }

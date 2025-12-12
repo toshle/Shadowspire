@@ -5,8 +5,8 @@ public class Projectile : MonoBehaviour
     public float Speed = 100f;
     public SphereCollider sphereCollider;
     public Rigidbody rb;
-    public int damege = 30;
-    [SerializeField] private int _passThrough = 0;
+    public float Damage = 50;
+    public int PassThrough = 0;
     private int _targetsHit = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,8 +37,8 @@ public class Projectile : MonoBehaviour
             _targetsHit++;
             Health p = collision.GetComponent<Health>();
             Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
-            if (p != null) p.TakeDamage(damege);
-            if (_targetsHit > _passThrough)
+            if (p != null) p.TakeDamage(Damage);
+            if (_targetsHit > PassThrough)
             {
                 Destroy(gameObject);
             }

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _loadingPrefab;
     [SerializeField] private MainMenu _mainMenuPrefab;
     [SerializeField] private PauseMenu _pauseMenuPrefab;
+    [SerializeField] private UpgradeMenu _upgradeMenuPrefab;
     [SerializeField] private CameraFollow _camera;
     [SerializeField] private Camera _menuCamera;
     public PlayerController Player { get; private set; }
@@ -103,6 +104,16 @@ public class GameManager : MonoBehaviour
                 Instantiate(_pauseMenuPrefab, _canvasesContainer.transform);
                 _isPaused = true;
             }
+        }
+    }
+
+    public void ShowLevelUpUpgrades()
+    {
+        if (State == GameState.ArenaLevel)
+        {
+            Time.timeScale = 0;
+            Instantiate(_upgradeMenuPrefab, _canvasesContainer.transform);
+            _isPaused = true;
         }
     }
 

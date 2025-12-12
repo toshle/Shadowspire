@@ -6,6 +6,8 @@ public class Level : MonoBehaviour
     public int CurrentLevel = 1;
     private int LevelUpStep = 100;
     private int _kills = 0;
+    [SerializeField] private Stats _playerStats;
+    [SerializeField] private Health _playerHealth;
 
     [SerializeField] HUD _hud;
     public void GiveExp(int xp) {
@@ -15,6 +17,11 @@ public class Level : MonoBehaviour
             CurrentLevel += 1;
             CurrentExp = 0;
             _hud.SetLevel(CurrentLevel);
+            //GameManager.Instance.ShowLevelUpUpgrades();
+            if (_playerStats.HealOnLevelUp)
+            {
+                _playerHealth.Heal(1000);
+            }
         }
         _hud.SetXP(CurrentExp, LevelUpStep * CurrentLevel);
         _hud.SetKills(_kills);

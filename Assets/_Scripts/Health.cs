@@ -4,8 +4,8 @@ using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
-    public int maxHealth = 100;
-    public int currentHealth;
+    public float maxHealth = 100f;
+    public float currentHealth;
 
     [SerializeField] HealthBar _healthBar;
     [SerializeField] HUD _hud;
@@ -15,7 +15,26 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int amt)
+    public void Heal(float amt)
+    {
+        if(currentHealth + amt > maxHealth)
+        {
+            currentHealth = maxHealth; 
+        } else
+        {
+            currentHealth += amt;
+        }
+        if (_healthBar != null)
+        {
+            _healthBar.SetHealth(currentHealth, maxHealth);
+        }
+        else if (_hud != null)
+        {
+            _hud.SetHealth(currentHealth, maxHealth);
+        }
+    }
+
+    public void TakeDamage(float amt)
     {
         currentHealth -= amt;
         if(_healthBar != null)

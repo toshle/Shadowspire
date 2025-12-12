@@ -8,6 +8,7 @@ public class PlayerController  : MonoBehaviour
     private Vector2 _move, _look;
     private float _gravity = -9.8f;
     private Vector3 _velocity, _rotationTarget;
+    [SerializeField] private Stats _playerStats;
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -75,7 +76,7 @@ public class PlayerController  : MonoBehaviour
         //transform.Translate(movement * Speed * Time.deltaTime, Space.World);
         if (movement != Vector3.zero)
         {
-            Controller.Move(movement * Speed * Time.deltaTime);
+            Controller.Move(movement * (Speed + _playerStats.MovementSpeed) * Time.deltaTime);
         }
     }
 }

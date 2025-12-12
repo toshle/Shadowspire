@@ -5,6 +5,7 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] public GameObject BulletPrefab;
     [SerializeField] public Transform BulletPoint;
+    [SerializeField] private Stats _playerStats;
     public float AttackSpeed = 1f;
     private float _lastAttackTime = 0f;
 
@@ -23,9 +24,12 @@ public class Gun : MonoBehaviour
         if (Mouse.current.leftButton.isPressed)
         {
             Debug.Log("Shoot at " + (Time.time - _lastAttackTime) + " Atk Speed: " + AttackSpeed);
-            if (Time.time - _lastAttackTime >= AttackSpeed )
+            if (Time.time - _lastAttackTime >= AttackSpeed - _playerStats.AttackSpeed)
             {
-                Instantiate(BulletPrefab, BulletPoint.position, Quaternion.LookRotation(transform.forward, Vector3.up));
+                var bullet = Instantiate(BulletPrefab, BulletPoint.position, Quaternion.LookRotation(transform.forward, Vector3.up));
+                var projectile = bullet.GetComponent<Projectile>();
+                projectile.Damage += _playerStats.BonusDamage;
+                projectile.PassThrough += _playerStats.AttackPassThrough;
                 _lastAttackTime = Time.time;
             }
         }
