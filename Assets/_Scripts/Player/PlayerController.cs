@@ -29,6 +29,9 @@ public class PlayerController  : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.Instance.IsPaused)
+            return;
+
         _orientPlayer();
 
         _movePlayer();

@@ -48,13 +48,6 @@ public class Generator : MonoBehaviour
                     spawnedTile.transform.position = _levelTransform.position + new Vector3(x * 5, height, z * 5);
                     spawnedTile.name = $"Wall {x}, {z}";
                     _map[x][z] = spawnedTile;
-                } else
-                {
-                    if (!_playerSpawnPlaced && Mathf.Floor((UnityEngine.Random.value * 100) + 1) > 95)
-                    {
-                        _playerSpawnPlaced = true;
-                        _playerTransform.position = _levelTransform.position + new Vector3(x * 5, 0, z * 5);
-                    }
                 }
             }
         }
@@ -63,11 +56,22 @@ public class Generator : MonoBehaviour
         {
             for (var z = 0; z < _height; z++)
             {
-                if(isIsolated(x,z))
+                if (Grid[x][z])
                 {
-                    DestroyImmediate(_map[x][z]);
-                    Grid[x][z] = false;
-                    //_map[x][z].transform.position = new Vector3(_map[x][z].transform.position.x, -0.6f, _map[x][z].transform.position.z) ;
+                    if (isIsolated(x, z))
+                    {
+                        DestroyImmediate(_map[x][z]);
+                        Grid[x][z] = false;
+                        //_map[x][z].transform.position = new Vector3(_map[x][z].transform.position.x, -0.6f, _map[x][z].transform.position.z) ;
+                    }
+                }
+                else
+                {
+                    if (!_playerSpawnPlaced && Mathf.Floor((UnityEngine.Random.value * 100) + 1) > 95)
+                    {
+                        _playerSpawnPlaced = true;
+                        _playerTransform.position = _levelTransform.position + new Vector3(x * 5, 0, z * 5);
+                    }
                 }
             }
         }

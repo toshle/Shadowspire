@@ -24,6 +24,7 @@ public class EnemyAI : MonoBehaviour
     public float damageDelay = 0.2f;
 
     public int exp = 20;
+    public bool IsDead = false;
 
 
     // --- INTERNALS ---
@@ -98,6 +99,7 @@ public class EnemyAI : MonoBehaviour
     // -------------------------
     private void Patrol()
     {
+        if (IsDead) return;
         if (patrolPoints.Length == 0) return;
 
         agent.speed = patrolSpeed;
@@ -120,6 +122,7 @@ public class EnemyAI : MonoBehaviour
     // -------------------------
     private void Chase()
     {
+        if (IsDead) return;
         agent.isStopped = false;
         agent.speed = patrolSpeed * 2f;
         agent.SetDestination(player.position);
@@ -136,6 +139,7 @@ public class EnemyAI : MonoBehaviour
     // -------------------------
     private void Attack()
     {
+        if (IsDead) return;
         agent.isStopped = true;
 
         // rotate toward player

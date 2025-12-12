@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Health : MonoBehaviour
 {
@@ -38,7 +40,13 @@ public class Health : MonoBehaviour
             level.GiveExp(enemy.exp);
             var spawner = s.GetComponent<Spawner>();
             spawner.KilledEnemy();
+            var navAgent = GetComponent<NavMeshAgent>();
+            navAgent.isStopped = true;
+            enemy.IsDead = true;
         }
-        Destroy(gameObject);
+
+        gameObject.transform.localScale = new Vector3(1f, 0.01f, 1f);
+
+        Destroy(gameObject, 2f);
     }
 }

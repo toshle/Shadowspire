@@ -18,7 +18,9 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Mouse.current.leftButton.isPressed)
+        if (GameManager.Instance.IsPaused)
+            return;
+        if (Mouse.current.leftButton.isPressed)
         {
             Debug.Log("Shoot at " + (Time.time - _lastAttackTime) + " Atk Speed: " + AttackSpeed);
             if (Time.time - _lastAttackTime >= AttackSpeed )

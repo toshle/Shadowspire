@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 0;
                 Instantiate(_pauseMenuPrefab, _canvasesContainer.transform);
                 _isPaused = true;
             }
