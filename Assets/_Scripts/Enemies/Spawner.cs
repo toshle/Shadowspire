@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -12,6 +13,8 @@ public class Spawner : MonoBehaviour
 
     [SerializeField]
     private int _currentlyAlive = 0;
+    [SerializeField]
+    private List<EnemyAI> _enemies = new();
     private float _lastAttackTime;
 
 
@@ -35,6 +38,8 @@ public class Spawner : MonoBehaviour
                 {
                     _lastAttackTime = Time.time;
                     var enemy = Instantiate(EnemyPrefab, Level.transform.position + new Vector3(x * 5, 0, z * 5), Level.transform.rotation);
+                    _enemies.RemoveAll(enemy => enemy == null);
+                    _enemies.Add(enemy);
                     //enemy.transform.position = Level.transform.position + new Vector3(x * 5, 0, z * 5);
                     _currentlyAlive++;
                 }

@@ -112,7 +112,8 @@ public class GameManager : MonoBehaviour
         if (State == GameState.ArenaLevel)
         {
             Time.timeScale = 0;
-            Instantiate(_upgradeMenuPrefab, _canvasesContainer.transform);
+            var upgradesMenu = Instantiate(_upgradeMenuPrefab, _canvasesContainer.transform);
+            upgradesMenu.PlayerLevel = FindFirstObjectByType<Level>(); ;
             _isPaused = true;
         }
     }

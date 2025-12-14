@@ -17,7 +17,7 @@ public class Level : MonoBehaviour
             CurrentLevel += 1;
             CurrentExp = 0;
             _hud.SetLevel(CurrentLevel);
-            //GameManager.Instance.ShowLevelUpUpgrades();
+            GameManager.Instance.ShowLevelUpUpgrades();
             if (_playerStats.HealOnLevelUp)
             {
                 _playerHealth.Heal(1000);
@@ -25,6 +25,23 @@ public class Level : MonoBehaviour
         }
         _hud.SetXP(CurrentExp, LevelUpStep * CurrentLevel);
         _hud.SetKills(_kills);
+    }
+
+    public void ApplyUpgrade(Upgrade upgrade)
+    {
+        _playerStats.MovementSpeed += upgrade.MovementSpeed;
+        _playerStats.Armor += upgrade.Armor;
+        _playerStats.BonusDamage += upgrade.BonusDamage;
+        _playerStats.AttackSpeed += upgrade.AttackSpeed;
+        _playerStats.AttackSpread += upgrade.AttackSpread;
+        _playerStats.AttackRange += upgrade.AttackRange;
+        _playerStats.AttackPassThrough += upgrade.AttackPassThrough;
+        _playerStats.LifeSteal += upgrade.LifeSteal;
+        _playerStats.HealthRegeneration += upgrade.HealthRegeneration;
+        if(upgrade.HealOnLevelUp)
+            _playerStats.HealOnLevelUp = upgrade.HealOnLevelUp;
+        if (upgrade.ExplodingProjectiles)
+            _playerStats.ExplodingProjectiles = upgrade.ExplodingProjectiles;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -301,6 +301,8 @@ MonoBehaviour:
   _upgrade1: {fileID: 5276735579728389278}
   _upgrade2: {fileID: 8323020666564118002}
   _upgrade3: {fileID: 1169614652409737816}
+  _playerLevel: {fileID: 0}
+  _choices: []
 --- !u!1001 &1971297125860657497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -312,6 +314,34 @@ PrefabInstance:
     - target: {fileID: 819719036955081473, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
       propertyPath: m_Name
       value: Upgrade3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3810553088970990073}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Click3Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5246303037222519926, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
       propertyPath: m_Pivot.x
@@ -420,6 +450,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Upgrade1
       objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3810553088970990073}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Click1Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5246303037222519926, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -526,6 +592,46 @@ PrefabInstance:
     - target: {fileID: 819719036955081473, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
       propertyPath: m_Name
       value: Upgrade2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3810553088970990073}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Click2Upgrade
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UpgradeMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UpgradeMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139493069778718532, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5246303037222519926, guid: 9c1b91b039da7ca46b1e7c608ec103f0, type: 3}
       propertyPath: m_Pivot.x
