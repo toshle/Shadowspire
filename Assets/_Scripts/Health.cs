@@ -13,6 +13,10 @@ public class Health : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        if (_healthBar != null)
+        {
+            _healthBar.SetHealth(currentHealth, maxHealth);
+        }
     }
 
     public void Heal(float amt)

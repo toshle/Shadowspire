@@ -27,7 +27,7 @@ public class Projectile : MonoBehaviour
     // ?????? ??????
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Hit " + collision.gameObject.name);
+        //Debug.Log("Hit " + collision.gameObject.name);
         if (collision.CompareTag("Player") || collision.CompareTag("Projectile"))
         {
             return;
@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
         {
             _targetsHit++;
             Health p = collision.GetComponent<Health>();
-            Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
+            //Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
             if (p != null) p.TakeDamage(Damage);
             if (_targetsHit > PassThrough)
             {

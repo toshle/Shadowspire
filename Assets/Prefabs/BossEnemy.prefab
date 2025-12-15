@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 7137786083921884203}
   - component: {fileID: -2231279327880164074}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BossEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7846765270620289423}
@@ -161,7 +161,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f1f7db0a2cfe944b89b5a68fc7c9261, type: 2}
+  - {fileID: 2100000, guid: 1b9890064c80faf41828515faa950e97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,15 +220,15 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTag: Player
   patrolPoints: []
-  patrolSpeed: 4.5
+  patrolSpeed: 4.25
   patrolWaitTime: 1
   sightRange: 500
   viewAngle: 360
-  attackRange: 2
-  damage: 10
+  attackRange: 3
+  damage: 100
   attackCooldown: 1
   damageDelay: 0.2
-  exp: 20
+  exp: 1000
   IsDead: 0
 --- !u!195 &7137786083921884203
 NavMeshAgent:
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66cdb1f58c489c84aba480d8dc282755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
+  maxHealth: 1000
   currentHealth: 0
   _healthBar: {fileID: 1318516816962008426}
   _hud: {fileID: 0}

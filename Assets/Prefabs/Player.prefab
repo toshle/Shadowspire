@@ -478,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Stats
   MovementSpeed: 0
   Armor: 0
-  BonusDamage: 0
+  BonusDamage: 50
   AttackSpread: 0
   AttackRange: 0
   AttackPassThrough: 0

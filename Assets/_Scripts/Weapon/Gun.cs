@@ -23,7 +23,7 @@ public class Gun : MonoBehaviour
             return;
         if (Mouse.current.leftButton.isPressed)
         {
-            Debug.Log("Shoot at " + (Time.time - _lastAttackTime) + " Atk Speed: " + AttackSpeed);
+            //Debug.Log("Shoot at " + (Time.time - _lastAttackTime) + " Atk Speed: " + AttackSpeed);
             if (Time.time - _lastAttackTime >= AttackSpeed - _playerStats.AttackSpeed)
             {
                 var bullet = Instantiate(BulletPrefab, BulletPoint.position, Quaternion.LookRotation(transform.forward, Vector3.up));
