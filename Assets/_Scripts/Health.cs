@@ -34,9 +34,17 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float amt)
+    public void TakeDamage(float amount)
     {
-        currentHealth -= amt;
+        if (CompareTag("Enemy"))
+        {
+            GameManager.Player.Health.Heal(GameManager.Player.Stats.LifeSteal);
+        }
+        if(CompareTag("Player"))
+        {
+            amount -= GameManager.Player.Stats.Armor;
+        }
+        currentHealth -= amount;
         if(_healthBar != null)
         {
             _healthBar.SetHealth(currentHealth, maxHealth);
@@ -52,11 +60,9 @@ public class Health : MonoBehaviour
     {
         if (CompareTag("Enemy"))
         {
-            GameObject p = GameObject.FindGameObjectWithTag("Player");
             GameObject s = GameObject.FindGameObjectWithTag("Spawner");
-            var level = p.GetComponent<Level>();
             var enemy = GetComponent<EnemyAI>();
-            level.GiveExp(enemy.exp);
+            GameManager.Player.Level.GiveExp(enemy.exp);
             var spawner = s.GetComponent<Spawner>();
             spawner.KilledEnemy();
             var navAgent = GetComponent<NavMeshAgent>();

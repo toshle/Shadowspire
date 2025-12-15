@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -8,6 +9,8 @@ public class Level : MonoBehaviour
     private int _kills = 0;
     [SerializeField] private Stats _playerStats;
     [SerializeField] private Health _playerHealth;
+
+    [SerializeField] public Dictionary<Upgrade, int> UpgradeUsage = new();
 
     [SerializeField] HUD _hud;
     public void GiveExp(int xp) {
@@ -29,6 +32,13 @@ public class Level : MonoBehaviour
 
     public void ApplyUpgrade(Upgrade upgrade)
     {
+        if(UpgradeUsage.ContainsKey(upgrade))
+        {
+            UpgradeUsage[upgrade]++;
+        } else
+        {
+            UpgradeUsage.Add(upgrade, 1);
+        }
         _playerStats.MovementSpeed += upgrade.MovementSpeed;
         _playerStats.Armor += upgrade.Armor;
         _playerStats.BonusDamage += upgrade.BonusDamage;
@@ -42,6 +52,7 @@ public class Level : MonoBehaviour
             _playerStats.HealOnLevelUp = upgrade.HealOnLevelUp;
         if (upgrade.ExplodingProjectiles)
             _playerStats.ExplodingProjectiles = upgrade.ExplodingProjectiles;
+        //upgrade.TimesUsed++;
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created

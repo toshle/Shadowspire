@@ -14,6 +14,9 @@ public class Upgrade : ScriptableObject
     public int HealthRegeneration = 0;
     public bool HealOnLevelUp = false;
     public bool ExplodingProjectiles = false;
+    public bool PoisonProjectiles = false;
 
     public string UpgradeText = string.Empty;
+    public int UseLimit = 0;
+    public int TimesUsed = 0;
 }

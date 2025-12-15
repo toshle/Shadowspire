@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    public static Player Player { get; private set; }
 
     [SerializeField] private GameObject _canvasesContainer;
     [SerializeField] private GameObject _loadingPrefab;
@@ -17,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private UpgradeMenu _upgradeMenuPrefab;
     [SerializeField] private CameraFollow _camera;
     [SerializeField] private Camera _menuCamera;
-    public PlayerController Player { get; private set; }
 
     private string _currentLevel;
 
@@ -69,17 +69,17 @@ public class GameManager : MonoBehaviour
                 Instantiate(_mainMenuPrefab, _canvasesContainer.transform);
                 break;
             case GameState.HubLevel:
-                Player = FindFirstObjectByType<PlayerController>();
                 UnloadLevel();
                 _menuCamera.gameObject.SetActive(false);
                 // Показваме Loading екран
                 await LoadLevel("Hub");
                 // Скриваме Loading екран
+                Player = FindFirstObjectByType<Player>();
                 break;
             case GameState.ArenaLevel:
-                Player = FindFirstObjectByType<PlayerController>();
                 UnloadLevel();
                 await LoadLevel("Arena");
+                Player = FindFirstObjectByType<Player>();
                 break;
             case GameState.Win:
                 break;

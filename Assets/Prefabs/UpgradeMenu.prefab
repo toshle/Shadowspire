@@ -294,14 +294,15 @@ MonoBehaviour:
   _upgrades:
   - {fileID: 11400000, guid: 28ede81674320f047932221442f0cda6, type: 2}
   - {fileID: 11400000, guid: 78b422b768191d1459076c33e46589be, type: 2}
-  - {fileID: 11400000, guid: c3e9a8702fa93b94c88734e5e4ddd853, type: 2}
-  - {fileID: 11400000, guid: 9ddb1a8f94298984096ebe8b3867bf13, type: 2}
-  - {fileID: 11400000, guid: 03396db1547ad284193b72144c373715, type: 2}
   - {fileID: 11400000, guid: 6a5a14af735a02a428124693dcb4ba14, type: 2}
+  - {fileID: 11400000, guid: 03396db1547ad284193b72144c373715, type: 2}
+  - {fileID: 11400000, guid: 9ddb1a8f94298984096ebe8b3867bf13, type: 2}
+  - {fileID: 11400000, guid: b8ce8f18bd294984dafd2ce3de881faf, type: 2}
+  - {fileID: 11400000, guid: c3e9a8702fa93b94c88734e5e4ddd853, type: 2}
   _upgrade1: {fileID: 5276735579728389278}
   _upgrade2: {fileID: 8323020666564118002}
   _upgrade3: {fileID: 1169614652409737816}
-  _playerLevel: {fileID: 0}
+  PlayerLevel: {fileID: 0}
   _choices: []
 --- !u!1001 &1971297125860657497
 PrefabInstance:

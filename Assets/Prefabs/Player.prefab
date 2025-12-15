@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 6972941370514595800}
   - component: {fileID: 1089015747315208969}
   - component: {fileID: 3263862266289345985}
+  - component: {fileID: 3660900150924935280}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -486,6 +487,23 @@ MonoBehaviour:
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
+--- !u!114 &3660900150924935280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856298565174965593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d5be07250f06be429216461eae9dc0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  Controller: {fileID: 1132765232846526377}
+  Stats: {fileID: 3263862266289345985}
+  Level: {fileID: 1089015747315208969}
+  Weapon: {fileID: 7354711550896669863}
+  Health: {fileID: 6972941370514595800}
 --- !u!1 &8783693808716426496
 GameObject:
   m_ObjectHideFlags: 0
