@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MainMenu _mainMenuPrefab;
     [SerializeField] private PauseMenu _pauseMenuPrefab;
     [SerializeField] private UpgradeMenu _upgradeMenuPrefab;
+    [SerializeField] private EndScreen _endScreenPrefab;
     [SerializeField] private CameraFollow _camera;
     [SerializeField] private Camera _menuCamera;
 
@@ -82,12 +83,24 @@ public class GameManager : MonoBehaviour
                 Player = FindFirstObjectByType<Player>();
                 break;
             case GameState.Win:
+                ClearEnemies();
+                EndScreen winScreen = Instantiate(_endScreenPrefab, _canvasesContainer.transform);
+                winScreen.HasWon = true;
                 break;
             case GameState.Lose:
+                ClearEnemies();
+                EndScreen loseScreen = Instantiate(_endScreenPrefab, _canvasesContainer.transform);
+                loseScreen.HasWon = false;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
         }
+    }
+
+    private void ClearEnemies()
+    {
+        Spawner spawner = FindFirstObjectByType<Spawner>();
+        spawner.Clear();
     }
 
     public void TogglePaused()

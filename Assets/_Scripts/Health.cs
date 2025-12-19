@@ -62,7 +62,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        if (CompareTag("Enemy"))
+        if (CompareTag("Enemy") || CompareTag("Boss"))
         {
             GameObject s = GameObject.FindGameObjectWithTag("Spawner");
             var enemy = GetComponent<EnemyAI>();
@@ -77,5 +77,10 @@ public class Health : MonoBehaviour
         gameObject.transform.localScale = new Vector3(1f, 0.01f, 1f);
 
         Destroy(gameObject, 2f);
+
+        if (CompareTag("Player"))
+        {
+            GameManager.Instance.UpdateGameState(GameState.Lose);
+        }
     }
 }
