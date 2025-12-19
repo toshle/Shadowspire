@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        if (CompareTag("Enemy"))
+        if (CompareTag("Enemy") || CompareTag("Boss"))
         {
             GameManager.Player.Health.Heal(GameManager.Player.Stats.LifeSteal);
         }
@@ -49,6 +49,9 @@ public class Health : MonoBehaviour
             amount -= GameManager.Player.Stats.Armor;
         }
         currentHealth -= amount;
+        if (currentHealth < 0)
+            currentHealth = 0;
+
         if(_healthBar != null)
         {
             _healthBar.SetHealth(currentHealth, maxHealth);
@@ -77,6 +80,9 @@ public class Health : MonoBehaviour
         gameObject.transform.localScale = new Vector3(1f, 0.01f, 1f);
 
         Destroy(gameObject, 2f);
+
+        if(CompareTag("Boss"))
+            GameManager.Instance.UpdateGameState(GameState.Win);
 
         if (CompareTag("Player"))
         {

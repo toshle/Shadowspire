@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
         {
             return;
         }
-        if (collision.CompareTag("Enemy"))
+        if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
             _targetsHit++;
             Health p = collision.GetComponent<Health>();

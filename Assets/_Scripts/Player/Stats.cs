@@ -26,4 +26,19 @@ public class Stats : MonoBehaviour
     {
         
     }
+
+    public void Copy(Stats stats)
+    {
+        MovementSpeed = stats.MovementSpeed;
+        Armor = stats.Armor;
+        BonusDamage = stats.BonusDamage;
+        AttackSpread = stats.AttackSpread;
+        AttackRange = stats.AttackRange;
+        AttackSpeed = stats.AttackSpeed;
+        AttackPassThrough = stats.AttackPassThrough;
+        LifeSteal = stats.LifeSteal;
+        HealthRegeneration = stats.HealthRegeneration;
+        HealOnLevelUp = stats.HealOnLevelUp;
+        ExplodingProjectiles = stats.ExplodingProjectiles;
+    }
 }

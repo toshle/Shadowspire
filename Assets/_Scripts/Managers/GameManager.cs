@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Camera _menuCamera;
 
     private string _currentLevel;
+    public bool TransferStats = false;
 
     public GameState State { get; private set; }
 
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
     {
         State = newState;
 
+        ClearEnemies();
         switch (newState)
         {
             case GameState.MainMenu:
@@ -78,17 +80,36 @@ public class GameManager : MonoBehaviour
                 Player = FindFirstObjectByType<Player>();
                 break;
             case GameState.ArenaLevel:
+                float maxHealth = 0f;
+                int currentLevel = 0;
+                //Stats newStats = new Stats();
+                Upgrade newStatsUpgrade = new Upgrade();
+                if (TransferStats)
+                {
+                    maxHealth = Player.Health.maxHealth;
+                    currentLevel = Player.Level.CurrentLevel;
+                    newStatsUpgrade.CopyStats(Player.Stats);
+                }
                 UnloadLevel();
                 await LoadLevel("Arena");
                 Player = FindFirstObjectByType<Player>();
+
+                if (TransferStats)
+                {
+                    Player.Health.maxHealth = maxHealth;
+                    Player.Health.currentHealth = maxHealth;
+                    Player.Level.CurrentLevel = currentLevel;
+                    //Player.Stats.Copy(newStats);
+                    Player.Level.ApplyUpgrade(newStatsUpgrade);
+                    //Destroy(newStats.gameObject);
+                }
+
                 break;
             case GameState.Win:
-                ClearEnemies();
                 EndScreen winScreen = Instantiate(_endScreenPrefab, _canvasesContainer.transform);
                 winScreen.HasWon = true;
                 break;
             case GameState.Lose:
-                ClearEnemies();
                 EndScreen loseScreen = Instantiate(_endScreenPrefab, _canvasesContainer.transform);
                 loseScreen.HasWon = false;
                 break;
@@ -100,7 +121,8 @@ public class GameManager : MonoBehaviour
     private void ClearEnemies()
     {
         Spawner spawner = FindFirstObjectByType<Spawner>();
-        spawner.Clear();
+        if(spawner != null)
+            spawner.Clear();
     }
 
     public void TogglePaused()

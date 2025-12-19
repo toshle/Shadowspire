@@ -33,6 +33,7 @@ public class EnemyAI : MonoBehaviour
     private int patrolIndex;
     private Animator anim;
     private bool isAttacking = false;
+    [SerializeField] private GameObject _projection;
 
     private enum State { Patrol, Chase, Attack }
     private State state = State.Patrol;
@@ -152,6 +153,7 @@ public class EnemyAI : MonoBehaviour
             lastAttackTime = Time.time;
             isAttacking = true;
             if (anim) anim.SetTrigger("attack");
+            _projection.SetActive(true);
             Invoke(nameof(DealDamage), damageDelay);
         }
     }
@@ -164,6 +166,7 @@ public class EnemyAI : MonoBehaviour
             Health p = player.GetComponent<Health>();
             if (p != null) p.TakeDamage(damage);
         }
+        _projection.SetActive(false);
         isAttacking = false;
     }
 

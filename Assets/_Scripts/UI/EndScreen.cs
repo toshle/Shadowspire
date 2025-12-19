@@ -30,6 +30,8 @@ public class EndScreen : MonoBehaviour
     public void Continue()
     {
         GameManager.Instance.IsPaused = false;
+        Time.timeScale = 1;
+        GameManager.Instance.TransferStats = true;
         GameManager.Instance.UpdateGameState(GameState.ArenaLevel);
         //Add progress transfer
         Destroy(gameObject);
@@ -38,6 +40,8 @@ public class EndScreen : MonoBehaviour
     public void ToHub()
     {
         GameManager.Instance.IsPaused = false;
+        Time.timeScale = 1;
+        GameManager.Instance.TransferStats = false;
         GameManager.Instance.UpdateGameState(GameState.HubLevel);
         Destroy(gameObject);
     }
@@ -45,6 +49,8 @@ public class EndScreen : MonoBehaviour
     public void Restart()
     {
         GameManager.Instance.IsPaused = false;
+        Time.timeScale = 1;
+        GameManager.Instance.TransferStats = false;
         GameManager.Instance.UpdateGameState(GameState.ArenaLevel);
         Destroy(gameObject);
     }
@@ -52,6 +58,8 @@ public class EndScreen : MonoBehaviour
     public void MainMenu()
     {
         GameManager.Instance.IsPaused = false;
+        Time.timeScale = 1;
+        GameManager.Instance.TransferStats = false;
         GameManager.Instance.UpdateGameState(GameState.MainMenu);
         Destroy(gameObject);
     }

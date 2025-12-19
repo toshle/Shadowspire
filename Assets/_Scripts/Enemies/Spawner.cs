@@ -81,10 +81,9 @@ public class Spawner : MonoBehaviour
 
     public void KilledEnemy()
     {
-        if(_boss != null && _boss.IsDead)
+       /* if(_boss != null && _boss.IsDead)
         {
-            GameManager.Instance.UpdateGameState(GameState.Win);
-        }
+        }*/
         _currentlyAlive--;
     }
 
