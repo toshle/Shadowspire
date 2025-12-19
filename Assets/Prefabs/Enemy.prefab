@@ -220,7 +220,7 @@ MonoBehaviour:
   player: {fileID: 0}
   playerTag: Player
   patrolPoints: []
-  patrolSpeed: 4.5
+  patrolSpeed: 3.75
   patrolWaitTime: 1
   sightRange: 500
   viewAngle: 360
@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66cdb1f58c489c84aba480d8dc282755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
+  maxHealth: 200
   currentHealth: 0
   _healthBar: {fileID: 1318516816962008426}
   _hud: {fileID: 0}
