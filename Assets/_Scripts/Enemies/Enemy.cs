@@ -30,8 +30,8 @@ public class EnemyAI : MonoBehaviour
     // --- INTERNALS ---
     private float lastAttackTime;
     private NavMeshAgent agent;
-    private int patrolIndex;
-    private Animator anim;
+    private int patrolIndex; 
+    [SerializeField] private Animator anim;
     private bool isAttacking = false;
     [SerializeField] private GameObject _projection;
 
@@ -42,7 +42,7 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        anim = GetComponentInChildren<Animator>();
+        //anim = GetComponentInChildren<Animator>();
 
         if (player == null)
         {
@@ -127,6 +127,7 @@ public class EnemyAI : MonoBehaviour
         agent.isStopped = false;
         agent.speed = patrolSpeed * 2f;
         agent.SetDestination(player.position);
+        if (anim) anim.SetBool("isAttacking", false);
     }
 
     private void ReturnToPatrol()
@@ -152,7 +153,7 @@ public class EnemyAI : MonoBehaviour
         {
             lastAttackTime = Time.time;
             isAttacking = true;
-            if (anim) anim.SetTrigger("attack");
+            if (anim) anim.SetBool("isAttacking", true);
             _projection.SetActive(true);
             Invoke(nameof(DealDamage), damageDelay);
         }
@@ -196,9 +197,12 @@ public class EnemyAI : MonoBehaviour
         anim.SetBool("isMoving", agent.velocity.magnitude > 0.1f);
     }
 
-    // -------------------------
-    // HEALTH
-    // -------------------------
+    public void Die()
+    {
+        if (!anim) return;
+
+        anim.SetBool("isDead", true);
+    }
     
 }
 

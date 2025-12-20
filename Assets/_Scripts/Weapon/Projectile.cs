@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public float Damage = 50;
     public int PassThrough = 0;
     private int _targetsHit = 0;
+    public GameObject HitPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,10 +35,17 @@ public class Projectile : MonoBehaviour
         }
         if (collision.CompareTag("Enemy") || collision.CompareTag("Boss"))
         {
-            _targetsHit++;
             Health p = collision.GetComponent<Health>();
+            if (p.currentHealth <= 0)
+            {
+                return;
+            }
+            _targetsHit++;
             //Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
+
             if (p != null) p.TakeDamage(Damage);
+            var hit = Instantiate(HitPrefab, collision.transform);
+            Destroy(hit, 5f);
             if (_targetsHit > PassThrough)
             {
                 Destroy(gameObject);

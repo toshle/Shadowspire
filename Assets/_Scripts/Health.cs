@@ -75,11 +75,15 @@ public class Health : MonoBehaviour
             var navAgent = GetComponent<NavMeshAgent>();
             navAgent.isStopped = true;
             enemy.IsDead = true;
+            enemy.Die();
+            var collider = GetComponent<BoxCollider>();
+            collider.size = new Vector3(0.1f, 0.1f, 0.1f);
+            collider.excludeLayers = LayerMask.GetMask(new string[] { "Player", "Enemies" });
+            _healthBar.gameObject.SetActive(false);
         }
+        //gameObject.transform.localScale = new Vector3(1f, 0.01f, 1f);
 
-        gameObject.transform.localScale = new Vector3(1f, 0.01f, 1f);
-
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 5f);
 
         if(CompareTag("Boss"))
             GameManager.Instance.UpdateGameState(GameState.Win);
