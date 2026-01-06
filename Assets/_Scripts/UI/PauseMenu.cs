@@ -22,6 +22,15 @@ public class PauseMenu : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Restart()
+    {
+        GameManager.Instance.IsPaused = false;
+        Time.timeScale = 1;
+        GameManager.Instance.TransferStats = false;
+        GameManager.Instance.UpdateGameState(GameState.ArenaLevel);
+        Destroy(gameObject);
+    }
+
     public void MainMenu()
     {
         GameManager.Instance.IsPaused = false;

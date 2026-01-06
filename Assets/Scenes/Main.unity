@@ -171,6 +171,7 @@ MonoBehaviour:
   _endScreenPrefab: {fileID: -7306276626497893740, guid: cc0c9c9c687331e4f9c6c3508fc19226, type: 3}
   _camera: {fileID: 6396665398211493344, guid: fac88512f9a7d2f49a58c7865cc67a29, type: 3}
   _menuCamera: {fileID: 1023128186}
+  TransferStats: 0
 --- !u!1 &353550999
 GameObject:
   m_ObjectHideFlags: 0

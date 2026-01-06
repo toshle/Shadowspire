@@ -172,6 +172,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ShowNotification(Notification prefab)
+    {
+        var notificationPrefab = Instantiate(prefab, _canvasesContainer.transform);
+    }
+
 }
 
 public enum GameState

@@ -757,10 +757,11 @@ MonoBehaviour:
   HardEnemyPrefab: {fileID: 6739758384655248803, guid: f8ba460b689907a4e84661df0b00f4d7, type: 3}
   BossEnemyPrefab: {fileID: 6739758384655248803, guid: fc4e244a49c4e91408e5fea4c4241e2b, type: 3}
   Level: {fileID: 1861486560}
+  BossNotificaitonPrefab: {fileID: 4141119766247318794, guid: f932d2f851f7b0a4f8350e920d2df9a3, type: 3}
   MaxAlive: 50
   SpawnInterval: 0.5
   HardEnemySpawnChance: 0.05
-  BossSpawnTimeInMinutes: 0.5
+  BossSpawnTimeInMinutes: 1
   BossSpawnTime: 0
   _currentlyAlive: 0
   _enemies: []

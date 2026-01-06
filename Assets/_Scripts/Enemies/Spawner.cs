@@ -7,6 +7,7 @@ public class Spawner : MonoBehaviour
     public EnemyAI HardEnemyPrefab;
     public EnemyAI BossEnemyPrefab;
     public Generator Level;
+    public Notification BossNotificaitonPrefab;
 
     public int MaxAlive = 50;
     public float SpawnInterval = 0.5f;
@@ -48,6 +49,7 @@ public class Spawner : MonoBehaviour
                 _enemies.RemoveAll(enemy => enemy == null);
                 _enemies.Add(_boss);
                 _bossSpawned = true;
+                GameManager.Instance.ShowNotification(BossNotificaitonPrefab);
             }
         }
 
