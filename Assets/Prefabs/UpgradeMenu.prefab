@@ -299,6 +299,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9ddb1a8f94298984096ebe8b3867bf13, type: 2}
   - {fileID: 11400000, guid: b8ce8f18bd294984dafd2ce3de881faf, type: 2}
   - {fileID: 11400000, guid: c3e9a8702fa93b94c88734e5e4ddd853, type: 2}
+  - {fileID: 11400000, guid: fc25b4888464685438b5d57cf0c393a2, type: 2}
   _upgrade1: {fileID: 5276735579728389278}
   _upgrade2: {fileID: 8323020666564118002}
   _upgrade3: {fileID: 1169614652409737816}
