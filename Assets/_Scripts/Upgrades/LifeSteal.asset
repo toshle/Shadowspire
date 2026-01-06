@@ -19,8 +19,11 @@ MonoBehaviour:
   AttackRange: 0
   AttackPassThrough: 0
   AttackSpeed: 0
-  LifeSteal: 1
+  LifeSteal: 2
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
-  UpgradeText: + 1 Heal on Hit
+  PoisonProjectiles: 0
+  UpgradeText: +2 Life Steal
+  UseLimit: 5
+  TimesUsed: 0

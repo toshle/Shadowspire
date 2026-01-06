@@ -414,8 +414,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 10000
   currentHealth: 0
+  isPoisoned: 0
   _healthBar: {fileID: 1318516816962008426}
   _hud: {fileID: 0}
+  _model: {fileID: 5234397823075960470}
+  _poisonMaterial: {fileID: 2100000, guid: 7baa59fec8219ba469fcef25e0801547, type: 2}
 --- !u!1001 &177023184289637210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -552,6 +555,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5391011836006163916, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391011836006163916, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 07234b7ff556d604b973668cb01045f6, type: 2}
     - target: {fileID: 5522351310473618473, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -712,6 +723,11 @@ PrefabInstance:
 --- !u!95 &2383062987225440305 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2550935751187727211, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
+  m_PrefabInstance: {fileID: 177023184289637210}
+  m_PrefabAsset: {fileID: 0}
+--- !u!137 &5234397823075960470 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5391011836006163916, guid: d66c23583a584ef4195dbea312c0b2a7, type: 3}
   m_PrefabInstance: {fileID: 177023184289637210}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8643106964312291915 stripped

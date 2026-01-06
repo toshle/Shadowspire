@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public Rigidbody rb;
     public float Damage = 50;
     public int PassThrough = 0;
+    public bool Poison = false;
     private int _targetsHit = 0;
     public GameObject HitPrefab;
 
@@ -43,7 +44,14 @@ public class Projectile : MonoBehaviour
             _targetsHit++;
             //Debug.Log("Enemy HP: " + p.currentHealth + "/" + p.maxHealth);
 
-            if (p != null) p.TakeDamage(Damage);
+            if (p != null)
+            {
+                p.TakeDamage(Damage);
+                if(Poison)
+                {
+                    p.Poison();
+                }
+            }
             var hit = Instantiate(HitPrefab, collision.transform);
             Destroy(hit, 5f);
             if (_targetsHit > PassThrough)

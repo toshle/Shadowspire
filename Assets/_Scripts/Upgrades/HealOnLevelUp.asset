@@ -15,7 +15,7 @@ MonoBehaviour:
   MovementSpeed: 0
   Armor: 0
   BonusDamage: 0
-  AttackSpread: 1
+  AttackSpread: 0
   AttackRange: 0
   AttackPassThrough: 0
   AttackSpeed: 0
@@ -26,4 +26,4 @@ MonoBehaviour:
   PoisonProjectiles: 0
   UpgradeText: Heal on Level Up
   UseLimit: 1
-  TimesUsed: 1
+  TimesUsed: 0

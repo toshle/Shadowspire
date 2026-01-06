@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6854673477003750510}
   - component: {fileID: 7806565183270075742}
   - component: {fileID: 389031365306504708}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107510368264852548}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -35,9 +35,9 @@ RectTransform:
   - {fileID: 6108870540496647988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4713349898790006673
@@ -116,7 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBar
   _bar: {fileID: 2474172057275553881}
+  _barImage: {fileID: 9112605481349498419}
   _text: {fileID: 9156155771223612703}
+  _normalColor: {r: 0.047058824, g: 0.6784314, b: 0, a: 1}
+  _poisonColor: {r: 0.7372549, g: 0.627451, b: 0, a: 1}
 --- !u!1 &128453886580275524
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,7 +131,7 @@ GameObject:
   - component: {fileID: 6108870540496647988}
   - component: {fileID: 7355559448713763145}
   - component: {fileID: 6350820967515546412}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HealthbarOut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +208,7 @@ GameObject:
   - component: {fileID: 818533504728291026}
   - component: {fileID: 340668058169689243}
   - component: {fileID: 9112605481349498419}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: HealthbarIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.04789547, g: 0.6792453, b: 0, a: 1}
+  m_Color: {r: 0.047058824, g: 0.6784314, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -280,7 +283,7 @@ GameObject:
   - component: {fileID: 7790653777014449941}
   - component: {fileID: 6930677319076225299}
   - component: {fileID: 9156155771223612703}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}

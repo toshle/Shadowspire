@@ -23,4 +23,7 @@ MonoBehaviour:
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
-  UpgradeText: + 0.1 Attack Speed
+  PoisonProjectiles: 0
+  UpgradeText: +10% Attack Speed
+  UseLimit: 10
+  TimesUsed: 0

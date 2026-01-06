@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   MovementSpeed: 0
   Armor: 0
-  BonusDamage: 5
+  BonusDamage: 20
   AttackSpread: 0
   AttackRange: 0
   AttackPassThrough: 0
@@ -23,4 +23,7 @@ MonoBehaviour:
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
-  UpgradeText: + 5 Damage
+  PoisonProjectiles: 0
+  UpgradeText: +20 Damage
+  UseLimit: 5
+  TimesUsed: 0

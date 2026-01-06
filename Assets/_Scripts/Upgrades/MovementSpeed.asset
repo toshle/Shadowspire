@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7eade3ca9798fe4a85457186cb71d8d, type: 3}
   m_Name: MovementSpeed
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
-  MovementSpeed: 1
+  MovementSpeed: 0.1
   Armor: 0
   BonusDamage: 0
   AttackSpread: 0
@@ -23,4 +23,7 @@ MonoBehaviour:
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
-  UpgradeText: + 1 Movement Speed
+  PoisonProjectiles: 0
+  UpgradeText: +10% Movement Speed
+  UseLimit: 10
+  TimesUsed: 0

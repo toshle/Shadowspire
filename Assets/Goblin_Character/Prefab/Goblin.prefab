@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GOBLIN_RIG
       objectReference: {fileID: 0}
+    - target: {fileID: -1727348531506677991, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1632135985204403864, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -113,9 +117,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: c0ec378d7285da042ab574c759b98ab3, type: 2}
     - target: {fileID: 6623141688882899845, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623141688882899845, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c0ec378d7285da042ab574c759b98ab3, type: 2}
+    - target: {fileID: 6623141688882899845, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7baa59fec8219ba469fcef25e0801547, type: 2}
     - target: {fileID: 7833249854982934595, guid: e4c88fe2e81511d4dae9da620550ecf9, type: 3}
       propertyPath: m_Name
       value: GLOVE

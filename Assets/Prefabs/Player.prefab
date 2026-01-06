@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
   currentHealth: 0
+  isPoisoned: 0
   _healthBar: {fileID: 0}
   _hud: {fileID: 5804444925319180324}
 --- !u!114 &1089015747315208969

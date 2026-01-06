@@ -52,6 +52,8 @@ public class Level : MonoBehaviour
             _playerStats.HealOnLevelUp = upgrade.HealOnLevelUp;
         if (upgrade.ExplodingProjectiles)
             _playerStats.ExplodingProjectiles = upgrade.ExplodingProjectiles;
+        if (upgrade.PoisonProjectiles)
+            _playerStats.PoisonProjectiles = upgrade.PoisonProjectiles;
         //upgrade.TimesUsed++;
     }
     

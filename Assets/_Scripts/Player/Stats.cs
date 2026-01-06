@@ -13,6 +13,7 @@ public class Stats : MonoBehaviour
     public float HealthRegeneration = 0f;
     public bool HealOnLevelUp = false; //Done
     public bool ExplodingProjectiles = false;
+    public bool PoisonProjectiles = false;
 
 
     // movement speed, attack speed, attack pass through, health, armor, damage bonus, attack spread, attack range
@@ -40,5 +41,6 @@ public class Stats : MonoBehaviour
         HealthRegeneration = stats.HealthRegeneration;
         HealOnLevelUp = stats.HealOnLevelUp;
         ExplodingProjectiles = stats.ExplodingProjectiles;
+        PoisonProjectiles = stats.PoisonProjectiles;
     }
 }

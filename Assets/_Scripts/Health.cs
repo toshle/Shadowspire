@@ -1,14 +1,24 @@
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 
 public class Health : MonoBehaviour
 {
     public float maxHealth = 100f;
     public float currentHealth;
+    public bool isPoisoned = false;
+    private float _poisonStartTime = 0f;
+    private float _lastPoisonTick = 0f;
+
 
     [SerializeField] HealthBar _healthBar;
     [SerializeField] HUD _hud;
+    [SerializeField] SkinnedMeshRenderer _model;
+    [SerializeField] Material _poisonMaterial;
+
 
     private void Awake()
     {
@@ -17,6 +27,29 @@ public class Health : MonoBehaviour
         {
             _healthBar.SetHealth(currentHealth, maxHealth);
         }
+    }
+    private void Update()
+    {
+        if (currentHealth > 0 && isPoisoned && (Time.time - _lastPoisonTick) > 1f)
+        {
+            _lastPoisonTick = Time.time;
+            TakeDamage(1f);
+            //_model.materials[1] = _poisonMaterial;
+        }
+
+        if (isPoisoned && (Time.time - _poisonStartTime) > 10f)
+        {
+            isPoisoned = false;
+            _healthBar.SetPoison(false);
+            //_model.materials[1] = _model.materials[0];
+        }
+    }
+
+    public void Poison()
+    {
+        isPoisoned = true;
+        _poisonStartTime = Time.time;
+        _healthBar.SetPoison(true);
     }
 
     public void Heal(float amt)

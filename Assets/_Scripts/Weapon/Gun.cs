@@ -30,6 +30,10 @@ public class Gun : MonoBehaviour
                 var projectile = bullet.GetComponent<Projectile>();
                 projectile.Damage += _playerStats.BonusDamage;
                 projectile.PassThrough += _playerStats.AttackPassThrough;
+                if(_playerStats.PoisonProjectiles)
+                {
+                    projectile.Poison = true;
+                }
                 _lastAttackTime = Time.time;
             }
         }

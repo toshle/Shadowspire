@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Armor
   m_EditorClassIdentifier: Assembly-CSharp::Upgrade
   MovementSpeed: 0
-  Armor: 1
+  Armor: 2
   BonusDamage: 0
   AttackSpread: 0
   AttackRange: 0
@@ -23,4 +23,7 @@ MonoBehaviour:
   HealthRegeneration: 0
   HealOnLevelUp: 0
   ExplodingProjectiles: 0
-  UpgradeText: + 1 Armor
+  PoisonProjectiles: 0
+  UpgradeText: +2 Armor
+  UseLimit: 3
+  TimesUsed: 0
