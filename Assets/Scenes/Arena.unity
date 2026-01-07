@@ -761,7 +761,7 @@ MonoBehaviour:
   MaxAlive: 50
   SpawnInterval: 0.5
   HardEnemySpawnChance: 0.05
-  BossSpawnTimeInMinutes: 1
+  BossSpawnTimeInMinutes: 10
   BossSpawnTime: 0
   _currentlyAlive: 0
   _enemies: []
