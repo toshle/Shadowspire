@@ -1,6 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering;
@@ -12,7 +16,6 @@ public class Health : MonoBehaviour
     public bool isPoisoned = false;
     private float _poisonStartTime = 0f;
     private float _lastPoisonTick = 0f;
-
 
     [SerializeField] HealthBar _healthBar;
     [SerializeField] HUD _hud;
@@ -125,5 +128,16 @@ public class Health : MonoBehaviour
         {
             GameManager.Instance.UpdateGameState(GameState.Lose);
         }
+    }
+    void Start()
+    {
+        RecalculateHealth();
+        currentHealth = maxHealth;
+    }
+
+    public void RecalculateHealth()
+    {
+        maxHealth = currentHealth + stats.HealthBonus;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
     }
 }
