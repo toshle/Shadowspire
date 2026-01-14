@@ -129,15 +129,4 @@ public class Health : MonoBehaviour
             GameManager.Instance.UpdateGameState(GameState.Lose);
         }
     }
-    void Start()
-    {
-        RecalculateHealth();
-        currentHealth = maxHealth;
-    }
-
-    public void RecalculateHealth()
-    {
-        maxHealth = currentHealth + stats.HealthBonus;
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-    }
 }

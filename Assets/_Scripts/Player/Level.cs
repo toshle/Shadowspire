@@ -54,6 +54,8 @@ public class Level : MonoBehaviour
             _playerStats.ExplodingProjectiles = upgrade.ExplodingProjectiles;
         if (upgrade.PoisonProjectiles)
             _playerStats.PoisonProjectiles = upgrade.PoisonProjectiles;
+        _playerHealth.maxHealth = _playerHealth.maxHealth + upgrade.HealthBonus;
+        _playerHealth.Heal(upgrade.HealthBonus);
         //upgrade.TimesUsed++;
     }
     
